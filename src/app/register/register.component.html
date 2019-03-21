@@ -1,0 +1,132 @@
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <!-- Material form register -->
+        <div class="card">
+
+            <h5 class="card-header bg-dark white-text text-center py-4">
+                <strong>Register</strong>
+            </h5>
+
+            <!--Card content-->
+            <div class="card-body px-lg-5 pt-0">
+
+                <!-- Form -->
+                <form class="text-center" style="color: #757575;">
+
+                    <div class="form-row">
+                        <div class="col">
+                            <!-- First name -->
+                            <div class="md-form">
+                                <input type="text" name="Firstname" id="materialRegisterFormFirstName" [(ngModel)]="register.Firstname" required class="form-control" #Firstname='ngModel'>
+                                <label for="materialRegisterFormFirstName">First name</label>
+                                <div *ngIf="Firstname.invalid && (Firstname.dirty || Firstname.touched)" class="alert alert-danger">
+                                    <div *ngIf="Firstname.errors.required">
+                                        Firstname is required.
+                                    </div>
+                                    <div *ngIf="Firstname.errors.minlength">
+                                        Firstame must be at least 4 characters long.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <!-- Last name -->
+                            <div class="md-form">
+                                <input type="text" name="Lastname" id="materialRegisterFormLastName" class="form-control" [(ngModel)]="register.Lastname" required class="form-control" #Lastname='ngModel'>
+                                <label for="materialRegisterFormLastName">Last name</label>
+                                <div *ngIf="Lastname.invalid && (Lastname.dirty || Lastname.touched)" class="alert alert-danger">
+                                    <div *ngIf="Lastname.errors.required">
+                                        Lastname is required.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- E-mail -->
+                    <div class="md-form mt-0">
+                        <input type="email" name="email" id="materialRegisterFormEmail" class="form-control" [(ngModel)]="register.email" required class="form-control" #email='ngModel'>
+                        <label for="materialRegisterFormEmail">E-mail</label>
+                        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+                            <div *ngIf="email.errors.required">
+                                Email is required.
+                            </div>
+                            <div *ngIf="email.errors.email">
+                                Enter valid Email.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="md-form">
+                        <input type="password" name="password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock"  [(ngModel)]="register.password" required class="form-control" #password='ngModel'>
+                        <label for="materialRegisterFormPassword">Password</label>
+                        <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                            At least 8 characters and 1 digit
+                        </small>
+                        <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+                            <div *ngIf="password.errors.required">
+                                Password is required.
+                            </div>
+                            <div *ngIf="email.errors.email">
+                                Enter valid Password.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Confirm Password -->
+                    <div class="md-form">
+                        <input type="password" name="confirmpassword" id="materialRegisterFormConfirmPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock" [(ngModel)]="register.confirmpassword" required class="form-control" #confirmpassword='ngModel'>
+                        <label for="materialRegisterFormPassword">Confirm Password</label>
+                        <div *ngIf="confirmpassword.invalid && (confirmpassword.dirty || confirmpassword.touched)" class="alert alert-danger">
+                            <div *ngIf="confirmpassword.errors.required">
+                                Please Confirm the password.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Phone number -->
+                    <div class="md-form">
+                        <input type="number" name="phoneno" id="materialRegisterFormPhone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock" [(ngModel)]="register.phoneno" required class="form-control" #phoneno='ngModel' >
+                        <label for="materialRegisterFormPhone">Phone number</label>
+                        <small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
+                        </small>
+                        <div *ngIf="phoneno.invalid && (phoneno.dirty || phoneno.touched)" class="alert alert-danger">
+                            <div *ngIf="phoneno.errors.required">
+                                Phone Number is required.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sign up button -->
+                    <button class="btn btn-outline-dark btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Sign in</button>
+
+                    <!-- Social register -->
+                    <p>or sign up with:</p>
+
+                    <a type="button" class="btn-floating btn-fb btn-sm">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a type="button" class="btn-floating btn-tw btn-sm">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a type="button" class="btn-floating btn-li btn-sm">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a type="button" class="btn-floating btn-git btn-sm">
+                        <i class="fab fa-github"></i>
+                    </a>
+
+                    <hr>
+
+                    <!-- Terms of service -->
+                    <p>By clicking
+                        <em>Sign up</em> you agree to our
+                        <a href="" target="_blank">terms of service</a>
+                </form>
+                <!-- Form -->
+            </div>
+        </div>
+    </div>
+    <div class="fixed-action-btn smooth-scroll" style="bottom: 45px; right: 24px;">
+        <a href="/register" class="btn-floating btn-large black">
+            <i class="fas fa-arrow-circle-up"></i>
+        </a>
+    </div>

@@ -1,0 +1,35 @@
+<div class="card card-body px-lg-5 pt-0">
+  <div class="row">
+    <div class="col-md-3 col-lg-3 col-sm-6">
+       <br><strong>Enter Text</strong>
+    </div>
+    <div class="col-md-3 col-lg-3 col-sm-6">
+      <br><input type="text" id="Entertext"class="form-control mb-4"[(ngModel)]="text" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 col-lg-3 col-sm-6">
+      <strong>Enter Password</strong>
+    </div>
+    <div class="col-md-3 col-lg-3 col-sm-6">
+      <input type="text" id="Enterpass"class="form-control mb-4" [(ngModel)]="password" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 col-lg-3 col-sm-6">
+      <strong>Select Image</strong>
+    </div>
+    <div>
+       <input type="file" accept="image/*" id="file" />
+    </div>
+  </div>
+  <div class="col-md-3 col-lg-3 col-sm-6">
+    <button class="btn btn-elegant btn-rounded" (click)="encryptText()">Encrypt</button>
+  </div>
+  <div class="row" *ngIf="encryptedImg">
+    <strong>Encrypted Image- download it and share it with others</strong>
+  </div>
+  <div>
+    <br><img id="resultimg" [src]="encryptedImg" *ngIf="encryptedImg" />
+  </div>
+</div>

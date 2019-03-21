@@ -1,0 +1,23 @@
+<div class="card card-body px-lg-5 pt-0">
+  <!-- <input [(ngModel)]="text" /> -->
+  <div class="row">
+    <div class="col-md-3 col-lg-3 col-sm-6">
+      <br><strong>Upload Encrypted Image</strong>
+    </div>
+    <div class="col-md-3 col-lg-3 col-sm-6">
+      <br><input type="file" accept="image/*" id="file" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 col-lg-3 col-sm-6">
+      <br><strong>Enter Password</strong>
+    </div>
+    <div class="col-md-3 col-lg-3 col-sm-6">
+      <br><input type="text" id="Enterpass"class="form-control mb-4" [(ngModel)]="password" />
+    </div>
+  </div>
+  <div>
+    <button class="btn btn-elegant btn-rounded" (click)="decryptImage()">Decrypt</button>
+  </div>
+    <div>{{ decryptedMsg }}</div>
+</div>
