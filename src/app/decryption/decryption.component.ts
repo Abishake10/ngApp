@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import * as CryptoJS from "crypto-js";
+
 declare var loadIMGtoCanvas, readMsgFromCanvas;
 @Component({
   selector: "app-decryption",
@@ -15,7 +17,12 @@ export class DecryptionComponent implements OnInit {
     loadIMGtoCanvas("file", "canvas", () => {
       var t = readMsgFromCanvas("canvas", this.password, 0);
       if (t != null) {
-        this.decryptedMsg = t;
+        // Decrypt
+        const bytes = CryptoJS.AES.decrypt(t.toString(), "secret key 123");
+        const plaintext = bytes.toString(CryptoJS.enc.Utf8);
+
+        console.log(plaintext);
+        this.decryptedMsg = plaintext;
       } else this.decryptedMsg = "ERROR REAVEALING MESSAGE!";
     });
   }

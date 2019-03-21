@@ -1,5 +1,7 @@
-import { Component, OnInit } from "@angular/core";
 declare var writeMsgToCanvas, loadIMGtoCanvas;
+import { Component, OnInit } from "@angular/core";
+import * as CryptoJS from "crypto-js";
+
 @Component({
   selector: "app-encryption",
   templateUrl: "./encryption.component.html"
@@ -12,13 +14,17 @@ export class EncryptionComponent implements OnInit {
 
   encryptText() {
     console.log(this.text);
+    const ciphertext = CryptoJS.AES.encrypt(this.text, "secret key 123");
+
+    console.log(ciphertext);
+
     loadIMGtoCanvas(
       "file",
       "canvas",
       () => {
         const isEncrypted = writeMsgToCanvas(
           "canvas",
-          this.text,
+          ciphertext,
           this.password,
           0
         );

@@ -18,7 +18,7 @@ const routes: Routes = [
   },
   {
     path: "home",
-    component: SpecialEventsComponent
+    component: EventsComponent
   },
   {
     path: "encrypt",
@@ -47,7 +47,7 @@ const routes: Routes = [
   {
     path: "feedback",
     component: FeedbackComponent
-  },
+  }
 ];
 
 @NgModule({
